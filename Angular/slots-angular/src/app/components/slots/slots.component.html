@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <div class="float-end">
+      <button mat-mini-fab  matTooltip="Credits" matTooltipPosition="above" color="primary">
+        <mat-icon>attach_money</mat-icon>
+      </button>
+      <div class="float-end"><h1>{{credits}}</h1></div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="firstSlot">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <image-slots #firstSlot [selectedNumber]="firstNumber"></image-slots>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="secondSlot">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <image-slots #secondSlot [selectedNumber]="secondNumber"></image-slots>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="thirdSlot">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <image-slots #thirdSlot [selectedNumber]="thirdNumber"></image-slots>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+  </table>
+</div>
+<div class="container"></div>
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <div class="float-end">
+      <button mat-raised-button color="primary" (click)="randomizeSlots()" style="margin-right: 10px;">Next</button>
+      <button mat-raised-button color="warn" (click)="checkoutCredits()">Check Out</button>
+    </div>
+    
+  </div>
+</div>
+
+
