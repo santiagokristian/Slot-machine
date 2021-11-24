@@ -17,17 +17,17 @@ If the Angular cannot connect to the backend change the backendUrl variable in t
 based on the port the nodemon was listening to.
 If a Cors error was encountered change origin variable of cors in the Node\app.js file based on the port/ip of the Angular project
 
-Tools & Frameworks:
-Angular 13
-Angular Material
-bootstrap
-Rxjs
-Angular forms
-
-NodeJs
-express
-express-session
-cors
-nodemon
-Joi
-cookie-parser
+Tools & Frameworks:  
+Angular 13  
+Angular Material  
+bootstrap  
+Rxjs  
+Angular forms  
+  
+NodeJs  
+express  
+express-session  
+cors  
+nodemon  
+Joi  
+cookie-parser  
