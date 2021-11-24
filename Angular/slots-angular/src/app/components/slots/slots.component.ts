@@ -55,14 +55,11 @@ export class SlotsComponent implements OnInit {
       this.credits = data.credits;
       this.assignRoleResults(data.rollDetails);
     },(error) =>{alert(error.error);
-                  console.log(error);
                   this.stopSlots();
                   })
   }
 
   assignRoleResults(rollDetails){
-    console.log(rollDetails);
-    
     this.firstNumber = this.slotDetailsArray.findIndex((slot)=>slot==rollDetails.firstSlot);
     this.secondNumber = this.slotDetailsArray.findIndex((slot)=>slot==rollDetails.secondSlot);
     this.thirdNumber = this.slotDetailsArray.findIndex((slot)=>slot==rollDetails.thirdSlot);
