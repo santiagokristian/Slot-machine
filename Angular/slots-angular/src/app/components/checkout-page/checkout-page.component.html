@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-4" *ngIf="isCheckoutPage">
+    <mat-card>
+      <mat-card-title>Please Enter your Name and Email to save your winnings!</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <p class="align-center">
+            <mat-form-field>
+              <input type="text" matInput placeholder="Name" formControlName="name">
+              <mat-error *ngIf="form.get('name').invalid">{{getErrorMessage('name')}}</mat-error>
+            </mat-form-field>
+          </p>
+
+          <p>
+            <mat-form-field>
+              <input type="text" matInput placeholder="Email" formControlName="email">
+              <mat-error *ngIf="form.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+            </mat-form-field>
+          </p>
+
+          <div class="button">
+            <button type="submit" color='accent' mat-raised-button>Check out</button>
+          </div>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-4" *ngIf="!isCheckoutPage">
+    <mat-card>
+      <mat-card-title>The email:{{savedEmail}} has currently saved {{savedCredits}} credits!</mat-card-title>
+      <mat-card-content>
+        <div class="button">
+            <button (click)="returnHome()" color='accent' mat-raised-button>Go back to play a new Session</button>
+          </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
